@@ -1,0 +1,112 @@
+.chat-box div.right:last-child{
+  -webkit-animation: slidein-right 0.5s;
+  animation: slidein-right 0.5s;
+}
+
+.chat-box div.left:last-child{
+  -webkit-animation: slidein-left 0.5s;
+  animation: slidein-left 0.5s;
+}
+
+#toast {
+  visibility: hidden;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  bottom: 90px;
+  width: 500px;
+  margin-left: -250px;
+  left: 50%;
+  text-align: center;
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 90px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 90px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 90px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes slidein-right{
+  from{
+    width: 0px;
+    background-color: black;
+    clip-path: circle(0% at 100% 0%);
+  }
+  to {
+    width: fit-content;
+    background-color: inherit;
+    clip-path: circle(128.4% at 91% 91%);
+  }
+}
+
+@keyframes slidein-left{
+  from{
+    width: 0px;
+    background-color: black;
+    clip-path: circle(0% at 0% 100%);
+  }
+  to {
+    width: fit-content;
+    background-color: inherit;
+    clip-path: circle(141.4% at 0 0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #toast {
+    width: 300px;
+    margin-left: -150px;
+    left: 50%;
+  }
+}
