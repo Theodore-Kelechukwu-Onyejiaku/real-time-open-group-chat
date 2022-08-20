@@ -46,7 +46,7 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     socket.broadcast.emit('disconnectNotification', socket.id);
     const onlineUsers = io.engine.clientsCount;
-    io.emit('countUsers', onlineUsers);
+    socket.broadcast.emit('countUsers', onlineUsers);
   });
 });
 
